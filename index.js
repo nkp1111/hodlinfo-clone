@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const axios = require("axios")
 require("dotenv").config()
+const path = require("path")
 
 const connectToMongo = require("./database/connection")
 const Stock = require("./database/stockSchema")
@@ -10,6 +11,11 @@ const port = process.env.PORT || 3000
 const url = "https://api.wazirx.com/api/v2/tickers"
 const mongoUrl = process.env.MONGO_URL
 const allQuoteUnits = ["inr"]
+
+// app configuration
+app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "ejs")
+app.use(express.static(path.join(__dirname, "public")))
 
 // connect mongo database
 connectToMongo(mongoUrl)
@@ -65,7 +71,8 @@ app.get("/:unit", async (req, res) => {
     const AllStocks = await Stock.find({})
     let allBaseUnits = AllStocks.map(stock => stock.base_unit)
     const stockToShow = AllStocks.filter(stock => stock.base_unit === baseUnit)
-    res.send({ allBaseUnits, allQuoteUnits, stockToShow })
+    // console.log({ allBaseUnits, allQuoteUnits, stockToShow })
+    res.render("index", { allBaseUnits, allQuoteUnits, stockToShow })
   } catch (error) {
     console.log(error)
     res.send({ "error": "Error reaching database..." })
