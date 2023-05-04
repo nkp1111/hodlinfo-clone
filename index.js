@@ -6,6 +6,7 @@ const path = require("path")
 
 const connectToMongo = require("./database/connection")
 const Stock = require("./database/stockSchema")
+const findBestStock = require("./utils/findBestStock")
 
 const port = process.env.PORT || 3000
 const url = "https://api.wazirx.com/api/v2/tickers"
@@ -71,8 +72,10 @@ app.get("/:unit", async (req, res) => {
     const AllStocks = await Stock.find({})
     let allBaseUnits = AllStocks.map(stock => stock.base_unit)
     const stockToShow = AllStocks.filter(stock => stock.base_unit === baseUnit)
-    // console.log({ allBaseUnits, allQuoteUnits, stockToShow })
-    res.render("index", { allBaseUnits, allQuoteUnits, stockToShow })
+    const bestStockIndex = findBestStock(stockToShow)
+
+    // console.log({ allBaseUnits, allQuoteUnits, stockToShow, bestStockIndex })
+    res.render("index", { allBaseUnits, allQuoteUnits, stockToShow, bestStockIndex })
   } catch (error) {
     console.log(error)
     res.send({ "error": "Error reaching database..." })
