@@ -1,0 +1,20 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--dark-black);
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--dark-blue);
+}
