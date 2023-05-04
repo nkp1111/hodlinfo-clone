@@ -8,10 +8,17 @@
   padding: 2rem var(--padding-x);
 }
 
+.header ul {
+  list-style: none;
+}
+
 .header__stocks,
 .header__styles {
+  display: flex;
   flex-wrap: wrap;
   flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 /* header logo  */
@@ -24,19 +31,117 @@
 }
 
 /* header stocks  */
-.header__stocks {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.header__stocks>* {
+/* header stocks div  */
+.header__stocks-visible,
+.header__stocks-buy {
+  padding: 0.3rem 1rem;
   margin: 0 1rem;
+  height: max-content;
+
+  display: flex;
+
+  border-radius: 5px;
+  background-color: var(--light-black);
 }
 
-.header ul {
-  list-style: none;
+/* header dropdowns  */
+.stock-control {
+  position: relative;
+}
+
+.stock-control .fa-solid {
+  margin-left: 0.5rem;
+}
+
+.header__stocks-visible {
+  display: flex;
+
+  cursor: pointer;
 }
 
 .header__stocks-hidden {
   display: none;
+  transition: display 0.3s linear;
+}
+
+.header__stocks-hidden.show {
+  display: block;
+  padding: 1rem;
+
+  position: absolute;
+  top: 2.5rem;
+  left: 1rem;
+
+  background-color: var(--white);
+  color: var(--light-black);
+
+  width: 10rem;
+  border-radius: 0.3rem;
+}
+
+.header__stocks-hidden li:hover {
+  cursor: pointer;
+  background-color: var(--light-white);
+}
+
+.header__stocks-buy a {
+  background-color: transparent;
+}
+
+/* header styles  */
+.header__styles>* {
+  margin: 0 1rem;
+}
+
+/* clock  */
+.header__styles-clock {
+  background-color: var(--light-black);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+
+  border: 5px solid var(--blue);
+}
+
+/* connect telegram  */
+.header__styles-connect a {
+  background: var(--blue);
+  color: inherit;
+  text-decoration: none;
+
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.header__styles-connect img {
+  margin-right: 0.4rem;
+  width: 1rem;
+}
+
+/* mode change dark and light  */
+.header__styles-mode {
+  cursor: pointer;
+}
+
+.mode__switch-box {
+  background: var(--light-black);
+  border-radius: 1rem;
+  position: relative;
+
+  height: 2rem;
+  width: 4rem;
+}
+
+.mode__switch-btn {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+
+  left: 5px;
+  top: 0.25rem;
+
+  background-color: var(--blue);
 }

@@ -1,5 +1,6 @@
 :root {
   --light-blue: #5dc7c2;
+  --blue: #3dc6c1;
   --dark-blue: #17a2b8;
 
   /* text color */
@@ -10,6 +11,8 @@
   --light-black: #2e3241;
   --light-white: #f8f9fa;
 
+  /* active button  */
+  --gray: #545b62;
   /* main background  */
   --dark-black: #191d28;
 
@@ -32,4 +35,13 @@
 
 body {
   font-family: var(--base-font), sans-serif;
+  /* dark theme  */
+  background-color: var(--dark-black);
+  color: var(--white);
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  font-weight: 400;
 }
