@@ -11,7 +11,7 @@
     </div>
 
     <div class="info__style-center">
-      <span><%= stockToShow[bestStockIndex].sell.toLocaleString('hi-IN') %></span>
+      <span>₹ <%= stockToShow[bestStockIndex].sell.toLocaleString('hi-IN') %></span>
       <span>Average ZEC/INR net price including commission</span>
     </div>
 
@@ -42,11 +42,11 @@
         <% for( let index = 0; index < stockToShow.length; index++ ) { %>
         <tr>
           <td><%= index + 1 %></td>
-          <td>WazirX</td>
-          <td><%= stockToShow[index].last.toLocaleString('hi-IN') %></td>
-          <td><%= stockToShow[index].buy.toLocaleString('hi-IN') %> /
-            <%= stockToShow[index].sell.toLocaleString('hi-IN') %></td>
-          <td><%= (stockToShow[index].buy -   stockToShow[index].sell).toLocaleString('hi-IN') %></td>
+          <td> <img src="images/platform.png" alt="."> WazirX</td>
+          <td>₹ <%= stockToShow[index].last.toLocaleString('hi-IN') %></td>
+          <td>₹ <%= stockToShow[index].buy.toLocaleString('hi-IN') %> /
+            ₹ <%= stockToShow[index].sell.toLocaleString('hi-IN') %></td>
+          <td>₹ <%= (stockToShow[index].buy - stockToShow[index].sell).toLocaleString('hi-IN') %></td>
           <td>76,845</td>
         </tr>
         <% } %>
