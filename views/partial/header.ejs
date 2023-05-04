@@ -23,8 +23,10 @@
         <i class="fa-solid fa-sort-down"></i>
       </div>
       <ul class="header__stocks-hidden">
-        <% for( let units of allBaseUnits.slice(0,12) ) { %>
-          <li><%= units.toUpperCase() %></li>
+        <% for( let unit of allBaseUnits.slice(0,12) ) { %>
+          <li>
+            <a href="/<%= unit.toUpperCase() %>-INR"><%= unit.toUpperCase() %></a>
+          </li>
         <% } %>
       </ul>
     </div>
