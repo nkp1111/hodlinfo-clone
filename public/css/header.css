@@ -1,0 +1,42 @@
+@import url("./index.css");
+
+/* header  */
+.header {
+  display: flex;
+  width: 100%;
+
+  padding: 2rem var(--padding-x);
+}
+
+.header__stocks,
+.header__styles {
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+/* header logo  */
+.header__logo {
+  width: 20vw;
+}
+
+.header__logo img {
+  width: 100%;
+}
+
+/* header stocks  */
+.header__stocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__stocks>* {
+  margin: 0 1rem;
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header__stocks-hidden {
+  display: none;
+}

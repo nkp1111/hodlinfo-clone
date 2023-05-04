@@ -1,20 +1,26 @@
 <header class="header">
   <!-- main logo  -->
   <div class="header__logo">
-    <img src="/images/logo.png" alt="logo" width="250" height="50">
+    <img src="/images/logo.png" alt="logo">
   </div>
   <div class="header__stocks">
     <div class="header__stocks-quoteunit">
       <!-- stock quote units: inr -->
-      <ul>
+      <div class="header__stocks-visible">
+        <p><%= allQuoteUnits[0].toUpperCase() %></p>
+      </div>
+      <ul class="header__stocks-hidden">
         <% for( let quote of allQuoteUnits ) { %>
-          <li><%= quote.toUpperCase() %></li>
+        <li><%= quote.toUpperCase() %></li>
         <% } %>
       </ul>
     </div>
     <div class="header__stocks-baseunit">
       <!-- stock base units  -->
-      <ul>
+      <div class="header__stocks-visible">
+        <p><%= stockToShow[0].base_unit.toUpperCase() %></p>
+      </div>
+      <ul class="header__stocks-hidden">
         <% for( let units of allBaseUnits ) { %>
           <li><%= units.toUpperCase() %></li>
         <% } %>
@@ -25,20 +31,20 @@
       <button>BUY <%= stockToShow[0].base_unit.toUpperCase() %></button>
     </div>
   </div>
-  <div class="header__tuning">
+  <div class="header__styles">
     <!-- moving clock animation  -->
-    <div class="header__tuning-clock">
+    <div class="header__styles-clock">
 
     </div>
     <!-- contact button: telegram  -->
-    <div class="header__tuning-connect">
+    <div class="header__styles-connect">
       <button>
         <i class="fa fa-brands fa-telegram"></i>
         Connect Telegram
       </button>
     </div>
     <!-- switch box to change dark and light mode  -->
-    <div class="header__tuning-mode">
+    <div class="header__styles-mode">
       <div class="mode__switch-box">
         <div class="mode__switch-btn"></div>
       </div>
