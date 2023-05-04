@@ -82,6 +82,11 @@ app.get("/:unit", async (req, res) => {
   }
 })
 
+
+app.get("/connect/telegram", (req, res) => {
+  res.render("telegram")
+})
+
 app.listen(port, (req, res) => {
   console.log(`server running on port ${port}`)
 })
