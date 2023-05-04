@@ -4,7 +4,8 @@
   "description": "- This project is a clone of [hodlinfo](https://hodlinfo.com/) website.\r - Shows stock information for 10 stocks.\r - Switch between light and dark mode.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
