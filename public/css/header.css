@@ -45,6 +45,11 @@
   background-color: var(--light-black);
 }
 
+body.light .header__stocks-visible,
+body.light .header__stocks-buy {
+  background-color: var(--light-white);
+}
+
 /* header dropdowns  */
 .stock-control {
   position: relative;
@@ -96,7 +101,7 @@
 
 /* clock  */
 .header__styles-clock {
-  background-color: var(--light-black);
+  background-color: transparent;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -108,7 +113,7 @@
 /* connect telegram  */
 .header__styles-connect a {
   background: var(--blue);
-  color: inherit;
+  color: var(--white);
   text-decoration: none;
 
   padding: 0.5rem 1rem;
@@ -134,14 +139,24 @@
   width: 4rem;
 }
 
+body.light .mode__switch-box {
+  background-color: var(--light-white);
+}
+
 .mode__switch-btn {
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
 
-  left: 5px;
+  left: 55%;
   top: 0.25rem;
 
   background-color: var(--blue);
+
+  transition: left 0.3s linear;
+}
+
+body.light .mode__switch-btn {
+  left: 5px;
 }

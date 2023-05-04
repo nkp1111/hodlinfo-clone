@@ -46,6 +46,10 @@
   margin-bottom: 1rem;
 }
 
+body.light .info__style-center span:first-child {
+  color: var(--violet);
+}
+
 /* main info all  */
 table {
   width: 100%;
@@ -56,6 +60,10 @@ table {
 th {
   color: #ffffff80;
   text-align: left;
+}
+
+body.light th {
+  color: #2e324180;
 }
 
 th,
@@ -74,11 +82,19 @@ tbody tr {
   margin-bottom: 0.5rem;
 }
 
+body.light tbody tr {
+  background: var(--light-white);
+}
+
 /* main copyright  */
 .main__copyright {
   padding: 2rem var(--padding-x);
   display: flex;
   justify-content: space-between;
+}
+
+body.light .main__copyright {
+  opacity: 0.5;
 }
 
 .main__copyright a {

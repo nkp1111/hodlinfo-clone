@@ -40,6 +40,12 @@ body {
   color: var(--white);
 }
 
+body.light {
+  /* light theme  */
+  background-color: var(--white);
+  color: var(--dark-black);
+}
+
 button,
 a {
   cursor: pointer;

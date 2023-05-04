@@ -1,4 +1,3 @@
-
 // control dropdown at header
 const dropdowns = document.querySelectorAll(".stock-control")
 
@@ -12,4 +11,18 @@ dropdowns.forEach(dropdown => {
       hiddenItems.classList.add("show")
     }
   })
+})
+
+// change mode 
+const changeModeBtn = document.querySelector(".header__styles-mode")
+const body = document.querySelector("body")
+
+changeModeBtn.addEventListener("click", (e) => {
+  const isLight = body.classList.contains("light")
+  if (isLight) {
+    body.classList.remove("light")
+  }
+  else {
+    body.classList.add("light")
+  }
 })
