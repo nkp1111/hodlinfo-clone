@@ -1,0 +1,56 @@
+<div class="main__info">
+  <!-- best platform info  -->
+  <div class="main__info-best">
+    <div class="info__style-side minute-change">
+      <span>0.15 %</span>
+      <span>5 Mins</span>
+    </div>
+    <div class="info__style-side hour-change">
+      <span>0.16 %</span>
+      <span>1 Hour</span>
+    </div>
+
+    <div class="info__style-center">
+      <span><%= stockToShow[bestStockIndex].sell.toLocaleString('hi-IN') %></span>
+      <span>Average ZEC/INR net price including commission</span>
+    </div>
+
+    <div class="info__style-side day-change">
+      <span>11.11 %</span>
+      <span>1 Day</span>
+    </div>
+    <div class="info__style-side week-change">
+      <span>14.1 %</span>
+      <span>7 Days</span>
+    </div>
+  </div>
+
+  <!-- info all platforms  -->
+  <div class="main__info-all">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Platform</th>
+          <th>Last Traded Price</th>
+          <th>Buy / Sell Price</th>
+          <th>Difference</th>
+          <th>Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for( let index = 0; index < stockToShow.length; index++ ) { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td>WazirX</td>
+          <td><%= stockToShow[index].last.toLocaleString('hi-IN') %></td>
+          <td><%= stockToShow[index].buy.toLocaleString('hi-IN') %> /
+            <%= stockToShow[index].sell.toLocaleString('hi-IN') %></td>
+          <td><%= (stockToShow[index].buy -   stockToShow[index].sell).toLocaleString('hi-IN') %></td>
+          <td>76,845</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
