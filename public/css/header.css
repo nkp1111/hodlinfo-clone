@@ -6,28 +6,28 @@
   width: 100%;
 
   padding: 2rem var(--padding-x);
+  padding-bottom: 1rem;
 }
 
 .header ul {
   list-style: none;
 }
 
+.header>* {
+  flex: 1;
+}
+
 .header__stocks,
 .header__styles {
   display: flex;
   flex-wrap: wrap;
-  flex: 1;
   justify-content: center;
   align-items: center;
 }
 
 /* header logo  */
-.header__logo {
-  width: 20vw;
-}
-
 .header__logo img {
-  width: 100%;
+  width: 60%;
 }
 
 /* header stocks  */
@@ -35,13 +35,13 @@
 /* header stocks div  */
 .header__stocks-visible,
 .header__stocks-buy {
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1.2rem;
   margin: 0 1rem;
   height: max-content;
 
   display: flex;
 
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--light-black);
 }
 
@@ -107,7 +107,13 @@ body.light .header__stocks-buy {
   height: 2rem;
   position: relative;
 
-  border: 5px solid var(--blue);
+  color: var(--blue);
+  font-weight: 500;
+  border: 3px solid var(--blue);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* connect telegram  */

@@ -6,7 +6,7 @@
 }
 
 .main__info {
-  padding: 2rem var(--padding-x);
+  padding: 0.5rem var(--padding-x);
 }
 
 .main-heading,
@@ -16,7 +16,7 @@
 
 .main__info-best {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 2rem;
 }
@@ -31,7 +31,7 @@
 }
 
 .info__style-side span:first-child {
-  font-size: 3rem;
+  font-size: 2.7rem;
   color: var(--light-blue);
   opacity: 1;
 }
@@ -41,7 +41,7 @@
 }
 
 .info__style-center span:first-child {
-  font-size: 4rem;
+  font-size: 5rem;
   opacity: 1;
   margin-bottom: 1rem;
 }
@@ -69,6 +69,7 @@ body.light th {
 th,
 td {
   padding: 0.3rem 1rem;
+  font-weight: 500;
 }
 
 td img {
