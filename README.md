@@ -6,7 +6,10 @@
 
 *Note:* sample.env file contains all the environmental variables names to be included in project.
 
-[code](https://github.com/nkp1111/hodlinfo-clone)
+## Links
+
+- [GitHub](https://github.com/nkp1111/hodlinfo-clone)
+- [Live App](https://hodlinfo-clone.vercel.app/)
 
 ## Table of Contents
 
