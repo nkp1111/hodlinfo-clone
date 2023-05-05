@@ -85,12 +85,13 @@ connectMongoDB(mongoUrl)
         res.send({ "error": "Error reaching database..." })
       }
     })
+
+    app.get("/connect/telegram", (req, res) => {
+      res.render("telegram")
+    })
+
+    app.listen(port, (req, res) => {
+      console.log(`server running on port ${port}`)
+    })
+
   })
-
-app.get("/connect/telegram", (req, res) => {
-  res.render("telegram")
-})
-
-app.listen(port, (req, res) => {
-  console.log(`server running on port ${port}`)
-})
