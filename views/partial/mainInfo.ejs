@@ -40,14 +40,22 @@
       </thead>
       <tbody>
         <% for( let index = 0; index < stockToShow.length; index++ ) { %>
-        <tr>
+        <tr class="<%= stockToShow[index].sell - stockToShow[index].buy > 0? "profit": "loss" %>">
           <td><%= index + 1 %></td>
           <td> <img src="images/platform.png" alt="."> WazirX</td>
           <td>₹ <%= stockToShow[index].last.toLocaleString('hi-IN') %></td>
           <td>₹ <%= stockToShow[index].buy.toLocaleString('hi-IN') %> /
             ₹ <%= stockToShow[index].sell.toLocaleString('hi-IN') %></td>
-          <td>₹ <%= (stockToShow[index].buy - stockToShow[index].sell).toLocaleString('hi-IN') %></td>
-          <td>76,845</td>
+          <td>₹ <%= (stockToShow[index].sell - stockToShow[index].buy).toLocaleString('hi-IN') %></td>
+
+          <td>
+            <% if (stockToShow[index].sell - stockToShow[index].buy > 0) { %>
+            <i class="fa-sharp fa-solid fa-sort-up"></i>
+            <% } else { %>
+            <i class="fa-sharp fa-solid fa-sort-down"></i>
+             <% } %> 
+            ₹ 76,845
+          </td>
         </tr>
         <% } %>
       </tbody>

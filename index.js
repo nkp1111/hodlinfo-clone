@@ -48,9 +48,10 @@ connectMongoDB(mongoUrl)
       }
       const [baseUnit, quote_unit] = unit.toLowerCase().split("-")
       try {
-        const AllStocks = await Stock.find({})
+        const AllStocks = await Stock.find({}).sort("-createdAt")
         let allBaseUnits = AllStocks.map(stock => stock.base_unit)
-        const stockToShow = AllStocks.filter(stock => stock.base_unit === baseUnit)
+        let stockToShow = AllStocks.filter(stock => stock.base_unit === baseUnit)
+        stockToShow = stockToShow.slice(0, 5)
         const bestStockIndex = findBestStock(stockToShow)
 
         res.render("index", { allBaseUnits, allQuoteUnits, stockToShow, bestStockIndex })
