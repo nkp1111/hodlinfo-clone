@@ -48,7 +48,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/nkp1111/chat-group-master.git
+$ git clone https://github.com/nkp1111/hodlinfo-clone.git
 
 # Install dependencies
 $ npm install
