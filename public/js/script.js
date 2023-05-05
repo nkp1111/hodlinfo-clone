@@ -3,6 +3,7 @@ const dropdowns = document.querySelectorAll(".stock-control")
 
 dropdowns.forEach(dropdown => {
   dropdown.addEventListener("click", (e) => {
+    hideDropdown(dropdowns, dropdown)
     const hiddenItems = e.currentTarget.querySelector(".header__stocks-hidden")
     const isShow = hiddenItems.classList.contains("show")
     if (isShow) {
@@ -12,6 +13,18 @@ dropdowns.forEach(dropdown => {
     }
   })
 })
+
+function hideDropdown(dropdowns, dropdownTarget) {
+  // hide visible dropdown beside current target by removing show class
+  dropdowns.forEach(dropdown => {
+    if (dropdown !== dropdownTarget) {
+      const hiddenItems = dropdown.querySelector(".header__stocks-hidden")
+      if (hiddenItems.classList.contains("show")) {
+        hiddenItems.classList.remove("show")
+      }
+    }
+  })
+}
 
 // change mode 
 const changeModeBtn = document.querySelector(".header__styles-mode")

@@ -83,6 +83,8 @@ body.light .header__stocks-buy {
 
   width: 10rem;
   border-radius: 0.3rem;
+
+  z-index: 10000;
 }
 
 .header__stocks-hidden li:hover {
