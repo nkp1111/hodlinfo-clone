@@ -8,6 +8,7 @@ const path = require("path")
 const { connectMongoDB } = require("./database/connection")
 const Stock = require("./database/stockSchema")
 const findBestStock = require("./utils/findBestStock")
+const stockDataToSave = require("./utils/stockDataToSave")
 
 const port = process.env.PORT || 3000
 const url = "https://api.wazirx.com/api/v2/tickers"
@@ -28,44 +29,18 @@ connectMongoDB(mongoUrl)
       try {
         const result = await axios.get(url)
         const { data } = result
-        let firstBaseUnit
 
-        const stocks = Object.keys(data)
+        const { dataToSave, firstBaseUnit } = stockDataToSave(data, allQuoteUnits)
 
-        let dataToShow = stocks.map(stock => {
-          const { name, last, buy, sell, volume, base_unit, quote_unit } = data[stock]
-
-          if (allQuoteUnits.includes(quote_unit)) {
-
-            if (!firstBaseUnit) {
-              firstBaseUnit = base_unit.toUpperCase() + "-" + quote_unit.toUpperCase()
-            }
-
-            return ({
-              name,
-              last,
-              buy,
-              sell,
-              volume,
-              base_unit,
-            })
-          } else {
-            return null
-          }
-        }).filter(item => item)
-
-        dataToShow = dataToShow.slice(0, 10)
-
-        await Stock.create(dataToShow)
-
+        await Stock.create(dataToSave)
         res.redirect(`/${firstBaseUnit || "BTC-INR"}`)
-
       } catch (error) {
         console.log(error)
         res.send({ "error": "No url data" })
       }
     })
 
+    // see a particular stock on platform
     app.get("/:unit", async (req, res) => {
       let { unit } = req.params
       if (!unit) {
@@ -78,7 +53,6 @@ connectMongoDB(mongoUrl)
         const stockToShow = AllStocks.filter(stock => stock.base_unit === baseUnit)
         const bestStockIndex = findBestStock(stockToShow)
 
-        // console.log({ allBaseUnits, allQuoteUnits, stockToShow, bestStockIndex })
         res.render("index", { allBaseUnits, allQuoteUnits, stockToShow, bestStockIndex })
       } catch (error) {
         console.log(error)
@@ -86,6 +60,7 @@ connectMongoDB(mongoUrl)
       }
     })
 
+    // telegram page additional info
     app.get("/connect/telegram", (req, res) => {
       res.render("telegram")
     })
