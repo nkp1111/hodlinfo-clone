@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
+  - [Images](#images)
   - [Built With](#built-with)
 - [How to use](#how-to-use)
 - [Contact](#contact)
@@ -18,7 +19,19 @@
 
 ## Overview
 
-![screenshot](./public/images/screencapture-localhost-3000-XRP-INR-2023-05-04-23_13_53.png)
+### Images
+
+- Desktop View
+
+  ![screenshot](./public/images/screencapture-localhost-3000-XRP-INR-2023-05-04-23_13_53.png)
+
+- Tablet View
+
+  ![screenshot](./public/images/screencapture-localhost-3000-BAT-INR-2023-05-05-13_04_16.png)
+
+- Mobile View
+
+  ![screenshot](./public/images/screencapture-localhost-3000-BAT-INR-2023-05-05-13_04_48.png)
 
 ### Built With
 

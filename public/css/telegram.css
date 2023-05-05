@@ -3,6 +3,11 @@
   justify-content: space-between;
 }
 
+.header.telegram .header__styles-mode {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .main__telegram {
   text-align: center;
   padding-bottom: 3rem;
