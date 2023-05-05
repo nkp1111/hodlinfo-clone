@@ -53,7 +53,7 @@ body.light .info__style-center span:first-child {
 /* main info all  */
 table {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   border-collapse: collapse;
 }
 
@@ -133,4 +133,66 @@ body.light .main__copyright {
 
 .main__copyright a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+  .info__style-center span:first-child {
+    font-size: 2rem;
+  }
+
+  .info__style-side span:first-child {
+    font-size: 1.5rem;
+  }
+
+  .info__style-center span:last-child {
+    font-size: 0.8rem;
+  }
+
+  .main__info-all {
+    max-width: 850px;
+    overflow: auto;
+  }
+
+  table {
+    font-size: 1.5rem;
+  }
+
+  th,
+  td {
+    padding: 0.3rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  td:nth-child(2) img {
+    margin-right: 0.1rem;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width:540px) {
+  .info__style-center {
+    width: 50%;
+  }
+
+  .info__style-side span:first-child,
+  .info__style-side span:last-child,
+  .info__style-center span:first-child {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .info__style-center span:last-child {
+    font-size: 0.5rem;
+  }
+
+  th {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  table {
+    font-size: 1rem;
+  }
 }
