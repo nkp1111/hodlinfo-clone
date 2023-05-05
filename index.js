@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
 
     const stocks = Object.keys(data)
 
-    const dataToShow = stocks.map(stock => {
+    let dataToShow = stocks.map(stock => {
       const { name, last, buy, sell, volume, base_unit, quote_unit } = data[stock]
 
       if (allQuoteUnits.includes(quote_unit)) {
@@ -52,13 +52,15 @@ app.get("/", async (req, res) => {
       }
     }).filter(item => item)
 
+    dataToShow = dataToShow.slice(0, 10)
+
     await Stock.create(dataToShow)
 
     res.redirect(`/${firstBaseUnit || "BTC-INR"}`)
 
   } catch (error) {
-    res.send({ "error": "No url data" })
     console.log(error)
+    res.send({ "error": "No url data" })
   }
 })
 
